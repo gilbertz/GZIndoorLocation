@@ -1,0 +1,491 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--    <title>How to build an iPhone website</title>-->
+<!--    <meta name="author" content="will" />-->
+<!--    <meta name="copyright" content="copyright 2008 www.engageinteractive.co.uk" />-->
+<!--    <meta name="description" content="Welcome to engege interactive on the iPhone!" />-->
+<!--    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">-->
+<!--    <link rel="apple-touch-icon" href="images/template/engage.png"/>-->
+<!--    <style type="text/css">-->
+<!--        @import url("layout.css");-->
+<!--    </style>-->
+<!--    <script type="text/javascript" src="test.js"></script>-->
+<!--   </head>-->
+<!--<body>-->
+<!--<h1>测试</h1>-->
+<!--   <center><a href="javascript:void(0)" onMouseDown="imageClicked()">click me</a></center>-->
+<!--   <form>  -->
+<!--      <input id="field_1" type="text" name="value" /><br/><br/><br/>  -->
+<!--      <input id="field_2" type="text" name="value" /><br/><br/><br/>  -->
+<!--      <input id="field_3" type="text" name="value" /><br/><br/><br/>  -->
+<!--    </form>  -->
+<!--</body>-->
+<!--</html>-->
+
+<html>
+  <meta charset="utf-8" />
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=.5,maximum-scale=3" name="viewport">
+    <link rel="stylesheet" href="example.css">
+        <script src="jquery.js" type="text/javascript"></script>
+        <script src="jquery.wayfinding.js" type="text/javascript"></script>
+        <script src="usesnap.js" type="text/javascript"></script>
+        <script src="snap.svg-min.js" type="text/javascript"></script>
+        <script src="list.js" type="text/javascript"></script>
+        <script src="podo.min.js"></script>
+        <script type="text/javascript">
+            var QX=0;
+            var QY=0;
+            var timevalue = 0;
+            var timer_add = 50;
+            var max_time = 1000;
+            var direction=1;
+            var count=0;
+            var  LastX=0,LastY=0;
+            var closeDialog=0;
+            var showpoi=1;
+            
+            var inter=0;
+            var beaconNo;
+            var beaconList;
+            var logo;
+            var circle;
+            var Parkpoint;
+            var Lookpoint;
+            
+            var startPoint;
+            var endPoint;
+            var realEnd;
+            var defaultOrientation;
+            var positionCurrent = {
+                lat: null,
+                lng: null,
+                hng: null
+            };
+        
+        var lasthng = 0;
+        var rotateangle=0;
+        var dx = 0;
+        var dy = 0;
+        var NewX=0;
+        var NewY=0;
+        var X=0;
+        var Y=0;
+        var currentstep = 0;
+        var i = 0;
+        var moving = false;
+        var podo = new Pedometer();
+        podo.setCountStep(0);
+        podo.setWeight(60);
+        podo.setStepSize(80);
+        podo.setMeanSpeed(10);
+        podo.setCalory(0);
+        
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener("deviceorientation", onHeadingChange);
+        }
+        
+        function clickme() {
+            alert("clickme");
+        }
+        
+        function getBrowserOrientation() {
+            var orientation;
+            if (screen.orientation && screen.orientation.type) {
+                orientation = screen.orientation.type;
+            } else {
+                orientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
+            }
+            return orientation;
+        }
+        function onHeadingChange(event) {
+            var heading = event.alpha;
+            // var adjustment = -180;
+            
+            if (typeof event.webkitCompassHeading !== "undefined") {
+                heading = event.webkitCompassHeading; //iOS non-standard
+            }
+                
+                positionCurrent.hng = heading;
+
+                if (typeof myMaps.style.webkitTransform !== "undefined") {
+                    // document.getElementById("floor").innerHTML = "webkit";
+                    if (positionCurrent.hng <= 15 || positionCurrent.hng > 345) {
+                        //myMaps.style.transform = "rotateZ(" + 0 + "deg)";
+                        lasthng = 0;
+                        
+                    } else if (positionCurrent.hng <= 45 && positionCurrent.hng > 15) {
+                        //myMaps.style.transform = "rotateZ(" + 30 + "deg)";
+                        lasthng = 30;
+                        
+                    } else if (positionCurrent.hng <= 75 && positionCurrent.hng > 45) {
+                        //myMaps.style.transform = "rotateZ(" + 60 + "deg)";
+                        lasthng = 60;
+                        
+                    } else if (positionCurrent.hng <= 105 && positionCurrent.hng > 75) {
+                        //myMaps.style.transform = "rotateZ(" + 90 + "deg)";
+                        lasthng = 90;
+                        
+                    } else if (positionCurrent.hng <= 135 && positionCurrent.hng > 105) {
+                        //myMaps.style.transform = "rotateZ(" + 120 + "deg)";
+                        lasthng = 120;
+                    } else if (positionCurrent.hng <= 165 && positionCurrent.hng > 135) {
+                        //myMaps.style.transform = "rotateZ(" + 150 + "deg)";
+                        lasthng = 150;
+                        
+                    } else if (positionCurrent.hng <= 195 && positionCurrent.hng > 165) {
+                        //myMaps.style.transform = "rotateZ(" + 180 + "deg)";
+                        lasthng = 180;
+                        
+                    } else if (positionCurrent.hng <= 225 && positionCurrent.hng > 195) {
+                        //myMaps.style.transform = "rotateZ(" + 210 + "deg)";
+                        lasthng = 210;
+                    } else if (positionCurrent.hng <= 255 && positionCurrent.hng > 225) {
+                        //myMaps.style.transform = "rotateZ(" + 240 + "deg)";
+                        lasthng = 240;
+                    } else if (positionCurrent.hng <= 285 && positionCurrent.hng > 255) {
+                        //myMaps.style.transform = "rotateZ(" + 270 + "deg)";
+                        lasthng = 270;
+                    } else if (positionCurrent.hng <= 315 && positionCurrent.hng > 285) {
+                        //myMaps.style.transform = "rotateZ(" + 300 + "deg)";
+                        lasthng = 300;
+                    } else {
+                        //myMaps.style.transform = "rotateZ(" + 330 + "deg)";
+                        lasthng = 330;
+                    }
+                    
+                }
+            rotateangle=lasthng;
+            document.getElementById("rotate").innerHTML = rotateangle;
+        }
+        
+        function show(jsondata)
+        {
+<!--            getData();-->
+            var jsonobjs = jsondata;
+<!--            alert(jsondata);-->
+<!--        var json = JSON.stringify(jsonobjs);-->
+<!--           alert(json);-->
+<!--              alert(jsonobjs[0].minor);-->
+<!--             alert(jsonobjs[0].major);-->
+<!--            alert(jsonobjs[0].measuredPower); -->
+
+            logo = Snap.select("#myMaps");
+            inter++;
+            for (var i = 0; i < beaconNo; i++) {
+
+                var hasdata = 0;
+                if (beaconList.get(i).rssiChain.length == 5) {
+                    beaconList.get(i).rssiChain.shift();
+                }
+                for (var y = 0; y < jsonobjs.length; y++) {
+                    if (beaconList.get(i).getminor() == jsonobjs[y].minor&&beaconList.get(i).getmajor() == jsonobjs[y].major) {
+                        hasdata = 1;
+                        break;
+                    }
+                }
+                if (hasdata == 1) {
+                    beaconList.get(i).rssiChain.push(jsonobjs[y].rssi);
+
+                    beaconList.get(i).measuredPower = jsonobjs[y].measuredPower;
+                }
+                else {
+                    beaconList.get(i).rssiChain.push(0);
+                }
+                // alert(i);
+            // alert(beaconList.get(i).rssiChain);
+
+            }
+            if (inter == 1)
+            {
+                var tmpX = 0;
+                var tmpY = 0;
+                var tmpD = 0;
+                for (var k = 0; k < beaconNo; k++)
+                {
+                    var ave = beaconList.get(k).getaveRssi();
+                    if (beaconList.get(k).getdistance() != 0 && beaconList.get(k).geteffcount() >= 3) {
+                        tmpX = tmpX + beaconList.get(k).getx() / (beaconList.get(k).getdistance() * beaconList.get(k).getdistance());
+                        tmpY = tmpY + beaconList.get(k).gety() / (beaconList.get(k).getdistance() * beaconList.get(k).getdistance());
+                        tmpD = tmpD + 1 / (beaconList.get(k).getdistance() * beaconList.get(k).getdistance());
+                    }
+                }
+                console.log(tmpX);
+                if (tmpD != 0)
+                {
+                    tmpX = tmpX / tmpD;
+                    tmpY = tmpY / tmpD;
+                    X = tmpX;
+                    Y = tmpY;
+                    
+                    if(closeDialog==0)
+                    {
+                        closeDialog=1;
+                        window.location.href = 'ios://closeDialog';
+                    }
+                    if(showpoi==1)
+                    {
+                        $('#myMaps #F1 #jz #poi').attr("visibility","display");
+                    }
+                    if(showpoi==0)
+                    {
+                        $('#myMaps #F1 #jz #poi').attr("visibility","hidden");
+                    }
+                }
+                rotateangle = rotateangle +20;
+                circle.animate(
+                               {
+                               transform: "t" + X + "," + Y + "r" + rotateangle
+                               }, 600);
+                               inter = 0;
+            }
+            
+        }
+        
+        function getData()
+        {
+<!--            window.location.href = 'ios://getLocation';-->
+            window.location.href = '/click/true';
+            setTimeout("getData()",1000);
+        }
+        
+        
+        function InitBeacon()
+        {
+            beaconList=new List();
+            logo = Snap.select("#myMaps");
+            
+            var floor=logo.select("#F1");
+            
+            var map=floor.select("#jz");
+            
+            circle = map.select("#poi");
+            
+            $.getJSON("yunzi.json",function(data)
+                      {
+                      var beacondata = eval(data);
+                      beaconNo=beacondata.length;
+                      for(var i=0; i<beacondata.length; i++)
+                      {
+                      var beacon = new Object();
+                      
+                      beacon.X=beacondata[i].x;
+                      beacon.Y=beacondata[i].y;
+                      beacon.major=beacondata[i].major;
+                      beacon.minor=beacondata[i].minor;
+                      beacon.aveRssi=0;
+                      beacon.distance=0;
+                      beacon.measuredPower=-59;
+                      beacon.rssiChain=new Array();
+                      beacon.getmeasuredPower=function()
+                      {
+                      return this.measuredPower;
+                      };
+                      beacon.setmeasuredPower=function(v)
+                      {
+                      this.measuredPower=v;
+                      };
+                      beacon.getminor=function()
+                      {
+                      return this.minor;
+                      };
+                      beacon.getmajor=function()
+                      {
+                      return this.major;
+                      };
+                      beacon.getx=function()
+                      {
+                      return this.X;
+                      };
+                      beacon.gety=function()
+                      {
+                      return this.Y;
+                      };
+                      beacon.geteffcount=function()
+                      {
+                      var effcount = 0;
+                      for (var j = 0; j < this.rssiChain.length; j++)
+                      {
+                      
+                      if (this.rssiChain[j] != 0)
+                      {
+                      effcount++;
+                      }
+                      }
+                      return effcount;
+                      };
+                      beacon.getaveRssi=function()
+                      {
+                      var num=0;
+                      var effcount=0;
+                      
+                      for(var i=0;i<this.rssiChain.length;i++)
+                      {
+                      
+                      if(this.rssiChain[i]!=0)
+                      {
+                      
+                      num=num+this.rssiChain[i];
+                      effcount++;
+                      }
+                      }
+                      if(effcount!=0)
+                      {
+                      
+                      this.aveRssi=num/effcount;
+                      }
+                      else
+                      {
+                      
+                      this.aveRssi=0;
+                      }
+                      return this.aveRssi;
+                      };
+                      
+                      beacon.getdistance=function()
+                      {
+                      
+                      var ratio = this.aveRssi / this.measuredPower;
+                      var Correction = 0.96 + Math.pow(Math.abs(this.aveRssi), 3.0) % 10.0 / 150.0;
+                      if (ratio < 1)
+                      {
+                      
+                      this.distance = Math.pow(ratio, 9.98) * Correction;
+                      }
+                      else
+                      {
+                      
+                      this.distance = 0.103 + 0.89978 * Math.pow(ratio, 9) * Correction;
+                      }
+                      return this.distance;
+                      };
+                      beaconList.add(beacon);
+                      }
+                      
+                      getData();
+
+
+                      });
+                      
+        }
+        
+        function createMap()
+        {
+            $('#myMaps').wayfinding({
+                                    'maps': [
+                                             {'path': '216.svg', 'id': 'F1'}
+                                             ],
+                                    'path': {
+                                    width: 3,
+                                    color: '#FFFF00',
+                                    radius: 8,
+                                    speed: 8
+                                    },
+                                    'defaultMap': 'F1',
+                                    'showLocation': true
+                                    }, function(){
+                                    // console.log('callback reached');
+                                    InitBeacon();
+                                    //getNear(Request("x"),Request("y"));
+                                    });
+        }
+        
+        $(document).ready(function () {
+                          'use strict';
+                          
+                          $('#myMaps').on('wayfinding:roomClicked', function(e, r) {
+                                          //startPoint=Request("id");
+                                          endPoint=r.roomId;
+                                          Navigate(startPoint,endPoint);
+                                          });
+                          });
+                          
+                          function Navigate(start, end)
+                          {
+                              var floorID=end.substr(1, 1);
+                              var newStart='B00'+floorID;
+                              $('#myMaps').wayfinding('startpoint', start);
+                              $('#myMaps').wayfinding('currentMap', 'F1');
+                              $('#myMaps').wayfinding('routeTo', end);
+                          }
+        
+        function getNear(x,y)
+        {
+            ff=$('#myMaps #F1 #jz #Doors').children();
+            var distance=10000;
+            var index=-1;
+            for(var i=0;i<ff.length;i++)
+            {
+                var tmp=ff.eq(i);
+                var X1=tmp.attr("x1");
+                var Y1=tmp.attr("y1");
+                var X2=tmp.attr("x2");
+                var Y2=tmp.attr("y2");
+                var distance1=Math.sqrt(Math.pow((x-X1),2)+Math.pow((y-Y1),2));
+                var distance2=Math.sqrt(Math.pow((x-X2),2)+Math.pow((y-Y2),2));
+                var kk;
+                if(distance1>=distance2)
+                {
+                    kk=distance1;
+                }
+                else
+                {
+                    kk=distance2;
+                }
+                if(kk<=distance)
+                {
+                    index=i;
+                    distance=kk;
+                }
+            }
+            return ff.eq(index).attr("id");
+            // $('#myMaps').wayfinding('startpoint', startPoint);
+            
+        }
+        
+        
+        function showPOI()
+        {
+            // $('#myMaps #F1 #jz #poi').attr("visibility","display");
+            showpoi=1;
+        }
+        
+        function hidePOI()
+        {
+            // $('#myMaps #F1 #jz #poi').attr("visibility","hidden");
+            showpoi=0;
+        }
+        
+            </script>
+        <body onload="createMap()">
+            <div id="myMaps" >
+<!--             <div>
+            </div>
+            <p>左右:<span id="alpha">0</span></p>
+            <p>前后:<span id="beta">0</span></p>
+            <p>扭转:<span id="gamma">0</span></p>
+            <p>指北针指向:<span id="heading">0</span>度</p>
+            <p>指北针精度:<span id="accuracy">0</span>度</p>
+            <p>rotate:<span id="rotate">0</span></p>
+            <script type="text/javascript">
+            function orientationHandler(event){
+                document.getElementById("alpha").innerHTML = event.alpha;
+                document.getElementById("beta").innerHTML = event.beta;
+                document.getElementById("gamma").innerHTML = event.gamma;
+                document.getElementById("heading").innerHTML = event.webkitCompassHeading;
+                document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;
+            }
+
+            if (window.DeviceOrientationEvent) 
+                {
+                    window.addEventListener("deviceorientation",orientationHandler,false); 
+                }else{
+
+                    document.body.innerHTML = "what user agent u r using"
+                };
+             </script>
+ -->            </div>
+
+        </body>
+</html>
