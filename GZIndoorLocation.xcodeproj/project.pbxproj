@@ -15,7 +15,6 @@
 		FE02E9371B639D2600267F80 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9351B639D2600267F80 /* LaunchScreen.xib */; };
 		FE02E95A1B63C5EA00267F80 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FE02E94D1B63C5EA00267F80 /* arrow.png */; };
 		FE02E95B1B63C5EA00267F80 /* bailian.svg in Resources */ = {isa = PBXBuildFile; fileRef = FE02E94E1B63C5EA00267F80 /* bailian.svg */; };
-		FE02E95C1B63C5EA00267F80 /* example.css in Resources */ = {isa = PBXBuildFile; fileRef = FE02E94F1B63C5EA00267F80 /* example.css */; };
 		FE02E95D1B63C5EA00267F80 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9501B63C5EA00267F80 /* index.html */; };
 		FE02E95E1B63C5EA00267F80 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9511B63C5EA00267F80 /* jquery.js */; };
 		FE02E95F1B63C5EA00267F80 /* jquery.wayfinding.js in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9521B63C5EA00267F80 /* jquery.wayfinding.js */; };
@@ -25,7 +24,8 @@
 		FE02E9641B63C5EA00267F80 /* snap.svg-min.js in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9571B63C5EA00267F80 /* snap.svg-min.js */; };
 		FE02E9651B63C5EA00267F80 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9581B63C5EA00267F80 /* test.js */; };
 		FE02E9661B63C5EA00267F80 /* usesnap.js in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9591B63C5EA00267F80 /* usesnap.js */; };
-		FEBB85531BB291A6005AF659 /* 216.svg in Resources */ = {isa = PBXBuildFile; fileRef = FEBB85511BB291A6005AF659 /* 216.svg */; settings = {ASSET_TAGS = (); }; };
+		FE4158141BBA5F7900BF2207 /* index.css in Resources */ = {isa = PBXBuildFile; fileRef = FE4158121BBA5F7900BF2207 /* index.css */; settings = {ASSET_TAGS = (); }; };
+		FE4158151BBA5F7900BF2207 /* SEIEE.svg in Resources */ = {isa = PBXBuildFile; fileRef = FE4158131BBA5F7900BF2207 /* SEIEE.svg */; settings = {ASSET_TAGS = (); }; };
 		FEBB85541BB291A6005AF659 /* map216.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBB85521BB291A6005AF659 /* map216.png */; settings = {ASSET_TAGS = (); }; };
 		FECBAD801B649F0400DDE2C1 /* 215.svg in Resources */ = {isa = PBXBuildFile; fileRef = FECBAD7F1B649F0400DDE2C1 /* 215.svg */; };
 		FECBAD821B64CEF300DDE2C1 /* 215_30.svg in Resources */ = {isa = PBXBuildFile; fileRef = FECBAD811B64CEF300DDE2C1 /* 215_30.svg */; };
@@ -49,7 +49,6 @@
 		FE02E9361B639D2600267F80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FE02E94D1B63C5EA00267F80 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = Resources/arrow.png; sourceTree = "<group>"; };
 		FE02E94E1B63C5EA00267F80 /* bailian.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = bailian.svg; path = Resources/bailian.svg; sourceTree = "<group>"; };
-		FE02E94F1B63C5EA00267F80 /* example.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = example.css; path = Resources/example.css; sourceTree = "<group>"; };
 		FE02E9501B63C5EA00267F80 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = Resources/index.html; sourceTree = "<group>"; };
 		FE02E9511B63C5EA00267F80 /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.js; path = Resources/jquery.js; sourceTree = "<group>"; };
 		FE02E9521B63C5EA00267F80 /* jquery.wayfinding.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.wayfinding.js; path = Resources/jquery.wayfinding.js; sourceTree = "<group>"; };
@@ -59,7 +58,8 @@
 		FE02E9571B63C5EA00267F80 /* snap.svg-min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "snap.svg-min.js"; path = "Resources/snap.svg-min.js"; sourceTree = "<group>"; };
 		FE02E9581B63C5EA00267F80 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = test.js; path = Resources/test.js; sourceTree = "<group>"; };
 		FE02E9591B63C5EA00267F80 /* usesnap.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = usesnap.js; path = Resources/usesnap.js; sourceTree = "<group>"; };
-		FEBB85511BB291A6005AF659 /* 216.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 216.svg; path = Resources/216.svg; sourceTree = "<group>"; };
+		FE4158121BBA5F7900BF2207 /* index.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = index.css; path = Resources/index.css; sourceTree = "<group>"; };
+		FE4158131BBA5F7900BF2207 /* SEIEE.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SEIEE.svg; path = Resources/SEIEE.svg; sourceTree = "<group>"; };
 		FEBB85521BB291A6005AF659 /* map216.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map216.png; path = Resources/map216.png; sourceTree = "<group>"; };
 		FECBAD7F1B649F0400DDE2C1 /* 215.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 215.svg; path = Resources/215.svg; sourceTree = "<group>"; };
 		FECBAD811B64CEF300DDE2C1 /* 215_30.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 215_30.svg; path = Resources/215_30.svg; sourceTree = "<group>"; };
@@ -125,7 +125,8 @@
 		FE02E94C1B63C59C00267F80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FEBB85511BB291A6005AF659 /* 216.svg */,
+				FE4158121BBA5F7900BF2207 /* index.css */,
+				FE4158131BBA5F7900BF2207 /* SEIEE.svg */,
 				FEBB85521BB291A6005AF659 /* map216.png */,
 				FEE98A341B8D4C1F00CF0CBF /* 216_6.svg */,
 				FEE98A321B89FD2200CF0CBF /* yunzi.json */,
@@ -135,7 +136,6 @@
 				FECBAD7F1B649F0400DDE2C1 /* 215.svg */,
 				FE02E94D1B63C5EA00267F80 /* arrow.png */,
 				FE02E94E1B63C5EA00267F80 /* bailian.svg */,
-				FE02E94F1B63C5EA00267F80 /* example.css */,
 				FE02E9501B63C5EA00267F80 /* index.html */,
 				FE02E9511B63C5EA00267F80 /* jquery.js */,
 				FE02E9521B63C5EA00267F80 /* jquery.wayfinding.js */,
@@ -208,11 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE02E9651B63C5EA00267F80 /* test.js in Resources */,
+				FE4158141BBA5F7900BF2207 /* index.css in Resources */,
 				FE02E95D1B63C5EA00267F80 /* index.html in Resources */,
 				FECBAD801B649F0400DDE2C1 /* 215.svg in Resources */,
-				FEBB85531BB291A6005AF659 /* 216.svg in Resources */,
 				FEBB85541BB291A6005AF659 /* map216.png in Resources */,
-				FE02E95C1B63C5EA00267F80 /* example.css in Resources */,
 				FEE98A331B89FD2200CF0CBF /* yunzi.json in Resources */,
 				FECBAD821B64CEF300DDE2C1 /* 215_30.svg in Resources */,
 				FE02E95F1B63C5EA00267F80 /* jquery.wayfinding.js in Resources */,
@@ -226,6 +225,7 @@
 				FE02E9341B639D2600267F80 /* Images.xcassets in Resources */,
 				FE02E95B1B63C5EA00267F80 /* bailian.svg in Resources */,
 				FE02E9641B63C5EA00267F80 /* snap.svg-min.js in Resources */,
+				FE4158151BBA5F7900BF2207 /* SEIEE.svg in Resources */,
 				FEE98A351B8D4C1F00CF0CBF /* 216_6.svg in Resources */,
 				FE02E9631B63C5EA00267F80 /* podo.min.js in Resources */,
 				FE02E95A1B63C5EA00267F80 /* arrow.png in Resources */,
