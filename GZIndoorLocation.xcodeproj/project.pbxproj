@@ -13,7 +13,6 @@
 		FE02E9321B639D2600267F80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9301B639D2600267F80 /* Main.storyboard */; };
 		FE02E9341B639D2600267F80 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9331B639D2600267F80 /* Images.xcassets */; };
 		FE02E9371B639D2600267F80 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE02E9351B639D2600267F80 /* LaunchScreen.xib */; };
-		FE02E9431B639D2600267F80 /* GZIndoorLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE02E9421B639D2600267F80 /* GZIndoorLocationTests.m */; };
 		FE02E95A1B63C5EA00267F80 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FE02E94D1B63C5EA00267F80 /* arrow.png */; };
 		FE02E95B1B63C5EA00267F80 /* bailian.svg in Resources */ = {isa = PBXBuildFile; fileRef = FE02E94E1B63C5EA00267F80 /* bailian.svg */; };
 		FE02E95C1B63C5EA00267F80 /* example.css in Resources */ = {isa = PBXBuildFile; fileRef = FE02E94F1B63C5EA00267F80 /* example.css */; };
@@ -37,16 +36,6 @@
 		FEE98A351B8D4C1F00CF0CBF /* 216_6.svg in Resources */ = {isa = PBXBuildFile; fileRef = FEE98A341B8D4C1F00CF0CBF /* 216_6.svg */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FE02E93D1B639D2600267F80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FE02E91B1B639D2500267F80 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FE02E9221B639D2500267F80;
-			remoteInfo = GZIndoorLocation;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		FE02E9231B639D2500267F80 /* GZIndoorLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GZIndoorLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE02E9271B639D2600267F80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,9 +47,6 @@
 		FE02E9311B639D2600267F80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE02E9331B639D2600267F80 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FE02E9361B639D2600267F80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FE02E93C1B639D2600267F80 /* GZIndoorLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GZIndoorLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE02E9411B639D2600267F80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE02E9421B639D2600267F80 /* GZIndoorLocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZIndoorLocationTests.m; sourceTree = "<group>"; };
 		FE02E94D1B63C5EA00267F80 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = Resources/arrow.png; sourceTree = "<group>"; };
 		FE02E94E1B63C5EA00267F80 /* bailian.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = bailian.svg; path = Resources/bailian.svg; sourceTree = "<group>"; };
 		FE02E94F1B63C5EA00267F80 /* example.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = example.css; path = Resources/example.css; sourceTree = "<group>"; };
@@ -92,13 +78,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE02E9391B639D2600267F80 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -106,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				FE02E9251B639D2500267F80 /* GZIndoorLocation */,
-				FE02E93F1B639D2600267F80 /* GZIndoorLocationTests */,
 				FE02E9241B639D2500267F80 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				FE02E9231B639D2500267F80 /* GZIndoorLocation.app */,
-				FE02E93C1B639D2600267F80 /* GZIndoorLocationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,23 +118,6 @@
 			children = (
 				FE02E9271B639D2600267F80 /* Info.plist */,
 				FE02E9281B639D2600267F80 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FE02E93F1B639D2600267F80 /* GZIndoorLocationTests */ = {
-			isa = PBXGroup;
-			children = (
-				FE02E9421B639D2600267F80 /* GZIndoorLocationTests.m */,
-				FE02E9401B639D2600267F80 /* Supporting Files */,
-			);
-			path = GZIndoorLocationTests;
-			sourceTree = "<group>";
-		};
-		FE02E9401B639D2600267F80 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FE02E9411B639D2600267F80 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -210,24 +170,6 @@
 			productReference = FE02E9231B639D2500267F80 /* GZIndoorLocation.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FE02E93B1B639D2600267F80 /* GZIndoorLocationTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FE02E9491B639D2600267F80 /* Build configuration list for PBXNativeTarget "GZIndoorLocationTests" */;
-			buildPhases = (
-				FE02E9381B639D2600267F80 /* Sources */,
-				FE02E9391B639D2600267F80 /* Frameworks */,
-				FE02E93A1B639D2600267F80 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FE02E93E1B639D2600267F80 /* PBXTargetDependency */,
-			);
-			name = GZIndoorLocationTests;
-			productName = GZIndoorLocationTests;
-			productReference = FE02E93C1B639D2600267F80 /* GZIndoorLocationTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -239,10 +181,6 @@
 				TargetAttributes = {
 					FE02E9221B639D2500267F80 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					FE02E93B1B639D2600267F80 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = FE02E9221B639D2500267F80;
 					};
 				};
 			};
@@ -260,7 +198,6 @@
 			projectRoot = "";
 			targets = (
 				FE02E9221B639D2500267F80 /* GZIndoorLocation */,
-				FE02E93B1B639D2600267F80 /* GZIndoorLocationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,13 +234,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE02E93A1B639D2600267F80 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -317,23 +247,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE02E9381B639D2600267F80 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE02E9431B639D2600267F80 /* GZIndoorLocationTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FE02E93E1B639D2600267F80 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FE02E9221B639D2500267F80 /* GZIndoorLocation */;
-			targetProxy = FE02E93D1B639D2600267F80 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FE02E9301B639D2600267F80 /* Main.storyboard */ = {
@@ -459,40 +373,6 @@
 			};
 			name = Release;
 		};
-		FE02E94A1B639D2600267F80 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GZIndoorLocationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GZIndoorLocation.app/GZIndoorLocation";
-			};
-			name = Debug;
-		};
-		FE02E94B1B639D2600267F80 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GZIndoorLocationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GZIndoorLocation.app/GZIndoorLocation";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -510,15 +390,6 @@
 			buildConfigurations = (
 				FE02E9471B639D2600267F80 /* Debug */,
 				FE02E9481B639D2600267F80 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FE02E9491B639D2600267F80 /* Build configuration list for PBXNativeTarget "GZIndoorLocationTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FE02E94A1B639D2600267F80 /* Debug */,
-				FE02E94B1B639D2600267F80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
